@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 23:57:38 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/24 23:59:00 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/25 00:04:59 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ void search_for_contact(PhoneBook &phonebook)
     }
     std::string input;
     int index;
-    do
-    {
-        std::cout << "\nPlease enter a contact index to see more info or Q to exit: ";
+    while (TRUE) {
+        std::cout << "\nPlease enter a contact index to see more info or Q to exit the search: ";
         std::cin >> input;
         if (!strcmp(input.c_str(), "Q"))
             return;
@@ -79,5 +78,5 @@ void search_for_contact(PhoneBook &phonebook)
         {
             std::cerr << RED <<"\nPlease enter a valid index.\n" << RESET ;
         }
-    } while (TRUE);
+    }
 }
