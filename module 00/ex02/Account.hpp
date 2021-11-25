@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <string>
 
 // ************************************************************************** //
 //                               Account Class                                //
