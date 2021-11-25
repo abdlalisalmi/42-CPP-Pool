@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:04:48 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/25 00:26:23 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:26:53 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
     while (TRUE)
     {
         std::cout << "\nEnter your comand (ADD, SEARCH, EXIT): ";
-        std::cin >> command;
+        std::getline(std::cin, command);
         if (strcmp(command.c_str(), "EXIT") == 0)
             exit(EXIT_SUCCESS);
         else if (strcmp(command.c_str(), "ADD") == 0)

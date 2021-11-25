@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:05:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/24 23:59:06 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:43:52 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ public:
 
     void add_contact(Contact contact) {
         contacts[index] = contact;
-        if (index == 8)
+        if (index == 7)
             index = 0;
         else
             index++;
