@@ -57,3 +57,4 @@
 [20211125_231658] index:2;amount:864;closed
 [20211125_231658] index:1;amount:785;closed
 [20211125_231658] index:0;amount:47;closed
+§
