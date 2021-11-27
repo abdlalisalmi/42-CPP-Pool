@@ -6,11 +6,11 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:14:15 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/27 12:19:58 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/27 21:18:50 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 void Contact::set_first_name(std::string str)
 {
@@ -28,37 +28,30 @@ void Contact::set_phone_number(std::string str)
 {
     phone_number = str;
 }
-void Contact::set_darkest(std::string str)
+void Contact::set_darkest_secret(std::string str)
 {
-    darkest = str;
+    darkest_secret = str;
 }
-void Contact::set_secret(std::string str)
-{
-    secret = str;
-}
-std::string Contact::get_first_name(void)
+
+std::string Contact::get_first_name(void) const
 {
     return first_name;
 }
-std::string Contact::get_last_name(void)
+std::string Contact::get_last_name(void) const
 {
     return last_name;
 }
-std::string Contact::get_nickname(void)
+std::string Contact::get_nickname(void) const
 {
     return nickname;
 }
-std::string Contact::get_phone_number(void)
+std::string Contact::get_phone_number(void) const
 {
     return phone_number;
 }
-std::string Contact::get_darkest(void)
+std::string Contact::get_darkest_secret(void) const
 {
-    return darkest;
-}
-std::string Contact::get_secret(void)
-{
-    return secret;
+    return darkest_secret;
 }
 
 void Contact::print_10_chars(std::string str)
