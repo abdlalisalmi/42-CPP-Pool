@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:05:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/25 11:43:52 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/27 12:46:30 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,100 +31,40 @@ private:
     std::string secret;
 
 public:
-    void set_first_name(std::string str) {
-        first_name = str;
-    }
-    void set_last_name(std::string str) {
-        last_name = str;
-    }
-    void set_nickname(std::string str) {
-        nickname = str;
-    }
-    void set_phone_number(std::string str) {
-        phone_number = str;
-    }
-    void set_darkest(std::string str) {
-        darkest = str;
-    }
-    void set_secret(std::string str) {
-        secret = str;
-    }
-    std::string get_first_name() {
-        return first_name;
-    }
-    std::string get_last_name() {
-        return last_name;
-    }
-    std::string get_nickname() {
-        return nickname;
-    }
-    std::string get_phone_number() {
-        return phone_number;
-    }
-    std::string get_darkest() {
-        return darkest;
-    }
-    std::string get_secret() {
-        return secret;
-    }
+    void set_first_name( std::string str );
+    void set_last_name( std::string str );
+    void set_nickname( std::string str );
+    void set_phone_number( std::string str );
+    void set_darkest( std::string str );
+    void set_secret( std::string str );
 
-    void print_10_chars(std::string str) {
-        size_t i = -1;
+    std::string get_first_name( void );
+    std::string get_last_name( void );
+    std::string get_nickname( void );
+    std::string get_phone_number( void );
+    std::string get_darkest( void );
+    std::string get_secret( void );
 
-        if (strlen(str.c_str()) == 10)
-            std::cout << str << " | ";
-        else if (strlen(str.c_str()) < 10)
-        {
-            std::cout << str;
-            i = -1;
-            while (++i < (10 - strlen(str.c_str())))
-                std::cout << ' ';
-            std::cout << " | ";
-        } else {
-            i = -1;
-            while (++i < 9)
-                std::cout << str[i];
-            std::cout << ". | ";
-        }
-    }
-
-    void print_contact() {
-        print_10_chars(first_name);
-        print_10_chars(last_name);
-        print_10_chars(nickname);
-        std::cout << '\n';
-    }
+    void print_10_chars( std::string str );
+    void print_contact( void );
 };
 
 class PhoneBook
 {
-public:
+private:
     int index;
     int n_contacts;
     Contact contacts[8];
 
-    void init() {
-        index = 0;
-        n_contacts = 0;
-    }
+public:
+    PhoneBook(void);
+    ~PhoneBook(void);
 
-    void add_contact(Contact contact) {
-        contacts[index] = contact;
-        if (index == 7)
-            index = 0;
-        else
-            index++;
-        if (n_contacts < 8)
-            n_contacts++;
-    }
-    void print_full_contact(int index) {
-        std::cout << "First Name    : " << contacts[index].get_first_name() << '\n';
-        std::cout << "Last Name     : " << contacts[index].get_last_name() << '\n';
-        std::cout << "Nickname      : " << contacts[index].get_nickname() << '\n';
-        std::cout << "Phone Number  : " << contacts[index].get_phone_number() << '\n';
-        std::cout << "Darkest       : " << contacts[index].get_darkest() << '\n';
-        std::cout << "Secret        : " << contacts[index].get_secret() << '\n';
-    }
+    Contact *get_contacts( void );
+    int get_n_contacts( void );
+
+    void add_contact(Contact contact);
+    void print_full_contact(int index);
 };
 
 void create_new_contact(PhoneBook &phonebook);

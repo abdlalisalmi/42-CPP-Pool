@@ -6,11 +6,11 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 23:57:38 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/25 23:05:50 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/27 12:25:25 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 void create_new_contact(PhoneBook &phonebook)
 {
@@ -49,12 +49,12 @@ void create_new_contact(PhoneBook &phonebook)
 void search_for_contact(PhoneBook &phonebook)
 {    
     std::cout << "\n";
-    for (int i = 0; i < phonebook.n_contacts; i++)
+    for (int i = 0; i < phonebook.get_n_contacts(); i++)
     {
         std::cout << i << " | ";
-        phonebook.contacts[i].print_contact();
+        phonebook.get_contacts()[i].print_contact();
     }
-    if (phonebook.n_contacts == 0)
+    if (phonebook.get_n_contacts() == 0)
     {
         std::cout << YELLOW << "There is no contacts in the PhoneBook.\n" << RESET;
         return;
@@ -69,7 +69,7 @@ void search_for_contact(PhoneBook &phonebook)
         try
         {
             index = std::stoi(input);
-            if (index < 0 || index > phonebook.n_contacts - 1)
+            if (index < 0 || index > phonebook.get_n_contacts() - 1)
                 throw std::invalid_argument("");
             std::cout << "\n";
             phonebook.print_full_contact(index);

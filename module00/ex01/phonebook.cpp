@@ -6,30 +6,44 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:04:48 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/25 13:26:53 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/27 12:40:39 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
-int main()
+PhoneBook::PhoneBook(void) {
+    index = 0;
+    n_contacts = 0;
+}
+
+PhoneBook::~PhoneBook(void) {
+}
+
+int PhoneBook::get_n_contacts(void)
 {
-    PhoneBook phonebook;
-    phonebook.init();
-    Contact contact;
-    std::string command;
+    return n_contacts;
+}
+Contact *PhoneBook::get_contacts(void)
+{
+    return contacts;
+}
 
-    std::cout << " _____  _                      ____              _    \n|  __ \\| |                    |  _ \\            | |   \n| |__) | |__   ___  _ __   ___| |_) | ___   ___ | | __\n|  ___/| '_ \\ / _ \\| '_ \\ / _ \\  _ < / _ \\ / _ \\| |/ /\n| |    | | | | (_) | | | |  __/ |_) | (_) | (_) |   < \n|_|    |_| |_|\\___/|_| |_|\\___|____/ \\___/ \\___/|_|\\_\\\n";
-    while (TRUE)
-    {
-        std::cout << "\nEnter your comand (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
-        if (strcmp(command.c_str(), "EXIT") == 0)
-            exit(EXIT_SUCCESS);
-        else if (strcmp(command.c_str(), "ADD") == 0)
-            create_new_contact(phonebook);
-        else if (strcmp(command.c_str(), "SEARCH") == 0)
-            search_for_contact(phonebook);
-    }
-    return 0;
+void PhoneBook::add_contact(Contact contact) {
+    contacts[index] = contact;
+    if (index == 7)
+        index = 0;
+    else
+        index++;
+    if (n_contacts < 8)
+        n_contacts++;
+}
+
+void PhoneBook::print_full_contact(int index) {
+    std::cout << "First Name    : " << contacts[index].get_first_name() << std::endl;
+    std::cout << "Last Name     : " << contacts[index].get_last_name() << std::endl;
+    std::cout << "Nickname      : " << contacts[index].get_nickname() << std::endl;
+    std::cout << "Phone Number  : " << contacts[index].get_phone_number() << std::endl;
+    std::cout << "Darkest       : " << contacts[index].get_darkest() << std::endl;
+    std::cout << "Secret        : " << contacts[index].get_secret() << std::endl;
 }
