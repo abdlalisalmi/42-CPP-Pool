@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:14:15 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/27 21:18:50 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/28 20:45:17 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,25 +56,12 @@ std::string Contact::get_darkest_secret(void) const
 
 void Contact::print_10_chars(std::string str)
 {
-    size_t i = -1;
-
-    if (strlen(str.c_str()) == 10)
-        std::cout << str << " | ";
-    else if (strlen(str.c_str()) < 10)
-    {
-        std::cout << str;
-        i = -1;
-        while (++i < (10 - strlen(str.c_str())))
-            std::cout << ' ';
-        std::cout << " | ";
-    }
+    if (str.length() == 10)
+        std::cout << str << "|";
+    else if (str.length() < 10)
+        std::cout << std::setw(10) << str << "|";
     else
-    {
-        i = -1;
-        while (++i < 9)
-            std::cout << str[i];
-        std::cout << ". | ";
-    }
+        std::cout << str.substr(0, 9) << ".|";
 }
 
 void Contact::print_contact(void)

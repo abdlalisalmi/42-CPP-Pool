@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:05:44 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/27 21:17:09 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/28 20:39:32 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 
 class Contact
 {
