@@ -6,11 +6,12 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:31:33 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/27 18:53:09 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/30 22:32:42 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
+#include <iomanip>
 
 int     Account::_nbAccounts = 0;
 int     Account::_totalAmount = 0;
@@ -35,37 +36,17 @@ Account::~Account(void) {
 }
 
 void Account::_displayTimestamp(void) {
-    time_t  now = time(0);
+    time_t  now = time(NULL);
     
     tm *time = localtime(&now);
-
-    std::string month = std::to_string(time->tm_mon + 1);
-    if (month.length() == 1)
-        month = '0' + month;
-
-    std::string day = std::to_string(time->tm_mday);
-    if (day.length() == 1)
-        day = '0' + day;
-
-    std::string hour = std::to_string(time->tm_hour);
-    if (hour.length() == 1)
-        hour = '0' + hour;
-
-    std::string minutes = std::to_string(time->tm_min);
-    if (minutes.length() == 1)
-        minutes = '0' + minutes;
-
-    std::string seconds = std::to_string(time->tm_sec);
-    if (seconds.length() == 1)
-        seconds = '0' + seconds;
-
-    std::cout   <<"[" << 1900 + time->tm_year
-                << month
-                << day
+    
+    std::cout   << "[" << 1900 + time->tm_year
+                << std::setfill('0') << std::setw(2) << time->tm_mon + 1
+                << std::setfill('0') << std::setw(2) << time->tm_mday
                 << '_'
-                << hour
-                << minutes
-                << seconds
+                << std::setfill('0') << std::setw(2) << time->tm_hour
+                << std::setfill('0') << std::setw(2) << time->tm_min
+                << std::setfill('0') << std::setw(2) << time->tm_sec
                 << "] ";
 }
 

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:04:48 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/11/28 20:47:47 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/11/30 22:15:27 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,21 +102,17 @@ void PhoneBook::search_for_contact( void )
     }
     std::string input;
     int index;
-    while (TRUE) {
-        std::cout << "\nPlease enter a contact index to see more info or Q to exit the search: ";
-        std::getline(std::cin, input);
-        if (!strcmp(input.c_str(), "Q"))
-            return;
-        else if (isNumber(input)) {
-            index = atoi(input.c_str());
-            if (index < 0 || index > get_n_contacts() - 1)
-                std::cerr << RED <<"\nPlease enter a valid index.\n" << RESET ;
-            else {
-                std::cout << "\n";
-                print_full_contact(index);
-            }
-        } else {
+    std::cout << "\nPlease enter a contact index to see more info: ";
+    std::getline(std::cin, input);
+    if (isNumber(input)) {
+        index = atoi(input.c_str());
+        if (index < 0 || index > get_n_contacts() - 1)
             std::cerr << RED <<"\nPlease enter a valid index.\n" << RESET ;
+        else {
+            std::cout << "\n";
+            print_full_contact(index);
         }
+    } else {
+        std::cerr << RED <<"\nPlease enter a valid index.\n" << RESET ;
     }
 }
