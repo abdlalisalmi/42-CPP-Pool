@@ -2,7 +2,7 @@
 *.d
 
 .vscode
-
+*/*/*.out
 # Object files
 *.o
 *.ko
