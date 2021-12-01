@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 22:46:18 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/01 13:44:36 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/11/26 22:53:53 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/11/26 23:12:15 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#include "Zombie.hpp"
 
-#include <iostream>
+Zombie::Zombie(std::string name) {
+    _name = name;
+}
 
-class Zombie
-{
-private:
-    std::string _name;
-public:
-    Zombie( std::string name );
-    ~Zombie();
-    void announce( void );
-};
+Zombie::~Zombie() {
+    std::cout << "Destructor called on zombie " << _name << std::endl;
+}
 
-#endif
+void Zombie::announce(void) {
+    std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}

@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 22:46:18 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/01 13:44:36 by aes-salm         ###   ########.fr       */
+/*   Created: 2021/12/01 13:24:55 by aes-salm          #+#    #+#             */
+/*   Updated: 2021/12/01 14:02:08 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#include "Zombie.hpp"
 
-#include <iostream>
-
-class Zombie
-{
-private:
-    std::string _name;
-public:
-    Zombie( std::string name );
-    ~Zombie();
-    void announce( void );
-};
-
-#endif
+Zombie* zombieHorde( int N, std::string name ) {
+    Zombie *zombie_horde = new Zombie [N];
+    for (int i = 0; i < N ; i++)
+        zombie_horde[i](name + i);
+    return zombie_horde;
+}
