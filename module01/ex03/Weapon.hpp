@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:09:26 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/02 16:29:17 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/02 20:13:06 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
     std::string type;
 
 public:
+    Weapon( void );
     Weapon( std::string type );
     ~Weapon();
 
