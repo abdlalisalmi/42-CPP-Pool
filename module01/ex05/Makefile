@@ -6,11 +6,11 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/03 00:00:10 by aes-salm          #+#    #+#              #
-#    Updated: 2021/12/03 00:00:25 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/12/03 11:32:37 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= 	cpp
+NAME 	= 	Karen
 CC		=	clang++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	= 	main.cpp Karen.cpp
