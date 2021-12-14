@@ -6,41 +6,43 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:43:15 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/12 14:43:21 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/14 01:38:15 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
+const int Fixed::_fracBits = 8;
+
 Fixed::Fixed(void) {
     std::cout << "Default constructor called" << std::endl;
-    this->_fp = 0;
+    this->_fixedPointValue = 0;
 }
 
 Fixed::Fixed(const Fixed &obj) {
     std::cout << "Copy constructor called" << std::endl;
-    this->_fp = obj.getRawBits();
+    *this = obj;
 }
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(Fixed &obj) {
+Fixed &Fixed::operator=(const Fixed &obj) {
     std::cout << "Assignation operator called" << std::endl;
     if (this != &obj) {
-        this->_fp = obj.getRawBits();
+        this->_fixedPointValue = obj.getRawBits();
     }
     return *this;
 }
 
 int Fixed::getRawBits(void) const {
     std::cout << "getRawBits member function called" << std::endl;
-    return this->_fp;
+    return this->_fixedPointValue;
 }
 
 void Fixed::setRawBits( int const raw) {
     std::cout << "getRawBits member function called" << std::endl;
-    this->_fp = raw;
+    this->_fixedPointValue = raw;
 }
