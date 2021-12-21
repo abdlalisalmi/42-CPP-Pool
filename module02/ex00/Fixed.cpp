@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 12:41:19 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/14 01:32:20 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:18:32 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits( int const raw) {
-    std::cout << "getRawBits member function called" << std::endl;
+    std::cout << "setRawBits member function called" << std::endl;
     this->_fixedPointValue = raw;
 }
