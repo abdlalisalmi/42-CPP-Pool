@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:24:10 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/22 11:59:56 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/22 19:25:52 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main() {
     player1.attack("Amine");
     std::cout << "------------------------------" << std::endl;
 
-    std::cout << std::endl << "----------- Test ATTACK fnction -----------" << std::endl;
+    std::cout << std::endl << "----------- Test TAKEDAMAGE fnction -----------" << std::endl;
     player1.takeDamage(3);
     std::cout << "------------------------------" << std::endl;
 
