@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:50:47 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/21 22:44:19 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:58:25 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ ClapTrap::ClapTrap(void)
 ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "Constructor called" << std::endl;
+    std::cout << "Create player with name " << name << std::endl;
     setName(name);
 }
 
@@ -98,9 +99,18 @@ void ClapTrap::attack(std::string const &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap " << getName() << " takeDamage " <<
-            "with " << amount << " points of damage!" << std::endl;
+    std::cout << "ClapTrap " << getName() << " takeDamage with "
+              << amount << " points of damage!" << std::endl;
     std::cout << " + Energy points before: " << getEnergyPoints() << std::endl;
     setEnergyPoints(this->_energyPoints - amount);
+    std::cout << " + Energy points after: " << getEnergyPoints() << std::endl;
+}
+
+void ClapTrap::beRepaired(unsigned int amount) 
+{
+    std::cout << "ClapTrap " << getName() << " beRepaired with "
+              << amount << " of energy points!" << std::endl;
+    std::cout << " + Energy points before: " << getEnergyPoints() << std::endl;
+    setEnergyPoints(this->_energyPoints + amount);
     std::cout << " + Energy points after: " << getEnergyPoints() << std::endl;
 }
