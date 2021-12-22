@@ -6,19 +6,18 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:50:47 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/22 11:58:25 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/22 23:33:57 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-unsigned int ClapTrap::_hitPoints = 10;
-unsigned int ClapTrap::_energyPoints = 10;
-unsigned int ClapTrap::_attackDamage = 0;
-
 ClapTrap::ClapTrap(void)
 {
     std::cout << "Defualt constructor called" << std::endl;
+    setHitPoints(10);
+    setEnergyPoints(10);
+    setAttackDamage(0);
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -26,6 +25,9 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "Constructor called" << std::endl;
     std::cout << "Create player with name " << name << std::endl;
     setName(name);
+    setHitPoints(10);
+    setEnergyPoints(10);
+    setAttackDamage(0);
 }
 
 ClapTrap::~ClapTrap()

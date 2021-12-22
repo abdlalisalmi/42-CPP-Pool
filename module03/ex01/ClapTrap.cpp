@@ -6,31 +6,33 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:50:47 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/22 21:30:32 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/22 23:36:14 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-unsigned int ClapTrap::_hitPoints = 10;
-unsigned int ClapTrap::_energyPoints = 10;
-unsigned int ClapTrap::_attackDamage = 0;
-
 ClapTrap::ClapTrap(void)
 {
-    std::cout << "ClapTrap : Defualt constructor called" << std::endl;
+    std::cout << "Defualt constructor called" << std::endl;
+    setHitPoints(10);
+    setEnergyPoints(10);
+    setAttackDamage(0);
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "ClapTrap : Constructor called" << std::endl;
+    std::cout << "Constructor called" << std::endl;
     std::cout << "Create player with name " << name << std::endl;
     setName(name);
+    setHitPoints(10);
+    setEnergyPoints(10);
+    setAttackDamage(0);
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap : Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)

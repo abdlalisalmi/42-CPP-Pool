@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:49:29 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/21 22:28:44 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/22 23:34:06 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class ClapTrap
 {
 private:
     std::string _name;
-    static unsigned int _hitPoints;
-    static unsigned int _energyPoints;
-    static unsigned int _attackDamage;
+    unsigned int _hitPoints;
+    unsigned int _energyPoints;
+    unsigned int _attackDamage;
 
 public:
     ClapTrap( std::string name );
