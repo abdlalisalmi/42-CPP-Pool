@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:43:57 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:29:32 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/24 11:51:21 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,10 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
 void FragTrap::highFiveGuys(void)
 {
     std::cout << "FragTrap : positive high fives request" << std::endl;
+}
+
+void FragTrap::attack(std::string const &target)
+{
+    std::cout << "FragTrap " << getName() << " attack " << target <<
+                ", causing " << getAttackDamage() << " points of damage!" << std::endl;
 }

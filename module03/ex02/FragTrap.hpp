@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:43:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:03:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/24 11:50:52 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class FragTrap: public ClapTrap
         FragTrap &operator=( const FragTrap &other );
 
         void highFiveGuys( void );
+        void attack( std::string const &target );
 
 };
 
