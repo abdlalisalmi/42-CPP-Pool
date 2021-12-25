@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:50:47 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:33:00 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/24 23:02:55 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap : Destructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+    std::cout << "ClapTrap : Copy constructor called" << std::endl;
+    *this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)

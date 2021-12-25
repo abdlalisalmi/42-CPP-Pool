@@ -6,14 +6,14 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 22:26:14 by aes-salm          #+#    #+#              #
-#    Updated: 2021/12/24 11:08:15 by aes-salm         ###   ########.fr        #
+#    Updated: 2021/12/24 21:35:52 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	=	a.out
 CC		=	clang++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 $(NAME)	:	$(SRCS)
 			$(CC) $(FLAGS) $(SRCS)

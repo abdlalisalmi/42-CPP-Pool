@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:24:10 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:33:13 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/24 23:05:51 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ int main() {
     ClapTrap player1("Abdelaali");
     
     std::cout << std::endl << "----------- Test attck() fnction with damage = 0 -----------" << std::endl;
-    player1.attack("Amine");
-    std::cout << "------------------------------" << std::endl;
-
-    std::cout << std::endl << "----------- Test attack() fnction with damage = 3 -----------" << std::endl;
-    player1.setAttackDamage(3);
     player1.attack("Amine");
     std::cout << "------------------------------" << std::endl;
 

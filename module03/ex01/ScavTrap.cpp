@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:48:13 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:14:20 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/24 23:07:42 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap : Destructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
+    std::cout << "ScavTrap : Copy constructor called" << std::endl;
+    *this = other;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)

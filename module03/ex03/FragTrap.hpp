@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:43:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:50:52 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/24 22:07:42 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
-    private:
-
+    protected:
     public:
         FragTrap( std::string name );
         FragTrap( void );
