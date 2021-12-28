@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 11:55:38 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 22:47:46 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/28 13:41:43 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,19 @@
 
 class DiamondTrap: public FragTrap, public ScavTrap
 {
-private:
-    std::string _name;
-    using FragTrap::_hitPoints;
-    using FragTrap::_attackDamage;
-    using ScavTrap::_energyPoints;
+    private:
+        std::string _name;
 
-public:
-    DiamondTrap( std::string name );
-    DiamondTrap( void );
-    ~DiamondTrap();
-    DiamondTrap( const DiamondTrap &other);
+    public:
+        DiamondTrap( std::string name );
+        DiamondTrap( void );
+        ~DiamondTrap();
+        DiamondTrap( const DiamondTrap &other);
 
-    DiamondTrap &operator=( const DiamondTrap &other );
+        DiamondTrap &operator=( const DiamondTrap &other );
 
-    void whoAmI();
-    void attack( std::string const &target );
+        void whoAmI();
+        void attack( std::string const &target );
 };
 
 #endif

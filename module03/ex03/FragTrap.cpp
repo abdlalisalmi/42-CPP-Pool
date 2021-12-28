@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:43:57 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 11:51:21 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/28 13:06:02 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ void FragTrap::highFiveGuys(void)
 
 void FragTrap::attack(std::string const &target)
 {
-    std::cout << "FragTrap " << getName() << " attack " << target <<
+    std::cout << "FragTrap : " << getName() << " attack " << target <<
                 ", causing " << getAttackDamage() << " points of damage!" << std::endl;
 }
