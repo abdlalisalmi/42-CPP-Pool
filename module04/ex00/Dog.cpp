@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 20:48:32 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/28 20:56:02 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:10:23 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ Dog &Dog::operator=(Dog const &other) {
         this->_type = other._type;
     }
     return *this;
+}
+
+// Class Methods
+
+void Dog::makeSound(void) const {
+    std::cout << "This is a Dog sound" << std::endl;
 }

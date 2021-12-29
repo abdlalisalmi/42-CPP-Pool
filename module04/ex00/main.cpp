@@ -6,13 +6,16 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:40:27 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 13:49:58 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:22:50 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
 
 int main()
 {
@@ -25,6 +28,16 @@ int main()
     i->makeSound(); // will output the cat sound!
     j->makeSound();
     meta->makeSound();
+
+    std::cout << "----- Test WrongCat with virtual keyword ------" << std::endl;
+    const WrongAnimal *w = new WrongCat();
+    std::cout << w->getType() << " " << std::endl;
+    w->makeSound();
+    
+    std::cout << "----- Test WrongCat without virtual keyword ------" << std::endl;
+    const WrongCat wc;
+    std::cout << wc.getType() << " " << std::endl;
+    wc.makeSound();
 
     return 0;
 }

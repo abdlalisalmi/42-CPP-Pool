@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:22 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 16:10:02 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:13:53 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::~Animal() {
-    std::cout << "Animal : Destructor called" << std::endl;
+WrongAnimal::~WrongAnimal() {
+    std::cout << "WrongAnimal : Destructor called" << std::endl;
 }
-Animal::Animal() {
-    std::cout << "Animal : Default constructor called" << std::endl;
+WrongAnimal::WrongAnimal() {
+    std::cout << "WrongAnimal : Default constructor called" << std::endl;
 }
-Animal::Animal(std::string type) {
-    std::cout << "Animal : Parameterized constructor called" << std::endl;
+WrongAnimal::WrongAnimal(std::string type) {
+    std::cout << "WrongAnimal : Parameterized constructor called" << std::endl;
     this->_type = type;
 }
-Animal::Animal(Animal const &other) {
-    std::cout << "Animal : Copy constructor called" << std::endl;
+WrongAnimal::WrongAnimal(WrongAnimal const &other) {
+    std::cout << "WrongAnimal : Copy constructor called" << std::endl;
     this->_type = other._type;
 }
-Animal &Animal::operator=(Animal const &other) {
-    std::cout << "Animal : Assignation operator called" << std::endl;
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &other) {
+    std::cout << "WrongAnimal : Assignation operator called" << std::endl;
     if (this != &other) {
         this->_type = other._type;
     }
@@ -36,13 +36,13 @@ Animal &Animal::operator=(Animal const &other) {
 
 // Getter and Setter Methods
 
-void Animal::setType(std::string type) {
+void WrongAnimal::setType(std::string type) {
     this->_type = type;
 }
-std::string Animal::getType(void) const {
+std::string WrongAnimal::getType(void) const {
     return this->_type;
 }
 
 // Class Methods
 
-void Animal::makeSound(void) const {}
+void WrongAnimal::makeSound(void) const {}

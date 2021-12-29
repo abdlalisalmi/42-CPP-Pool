@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 20:40:38 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/28 20:48:23 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:08:41 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ public:
     Dog( void );
     Dog( Dog const & );
     Dog &operator=( Dog const &);
+
+    void makeSound( void ) const;
 };
 
 #endif

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 13:48:17 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 16:07:59 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:18:35 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat: public Animal
+class WrongCat: public WrongAnimal
 {
     private:
         /* data */
     public:
-        ~Cat();
-        Cat( void );
-        Cat( Cat const & );
-        Cat &operator=( Cat const &);
+        ~WrongCat();
+        WrongCat( void );
+        WrongCat( WrongCat const & );
+        WrongCat &operator=( WrongCat const &);
 
         void makeSound( void ) const;
 };

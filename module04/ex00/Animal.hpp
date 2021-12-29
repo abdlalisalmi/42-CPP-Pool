@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:09 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/28 14:57:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:07:49 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal
         void setType( std::string );
         std::string getType( void ) const;
 
-        void makeSound( void ) const;
+        virtual void makeSound( void ) const;
 };
 
 #endif

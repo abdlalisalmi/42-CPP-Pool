@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 13:48:41 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 16:10:38 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:14:19 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    std::cout << "Cat : Destructor called" << std::endl;
+    std::cout << "WrongCat : Destructor called" << std::endl;
 }
-Cat::Cat(void)
+WrongCat::WrongCat(void)
 {
-    std::cout << "Cat : Default constructor called" << std::endl;
-    this->_type = "Cat";
+    std::cout << "WrongCat : Default constructor called" << std::endl;
+    this->_type = "WrongCat";
 }
-Cat::Cat(Cat const &other)
+WrongCat::WrongCat(WrongCat const &other)
 {
-    std::cout << "Cat : Copy constructor called" << std::endl;
+    std::cout << "WrongCat : Copy constructor called" << std::endl;
     this->_type = other._type;
 }
-Cat &Cat::operator=(Cat const &other)
+WrongCat &WrongCat::operator=(WrongCat const &other)
 {
-    std::cout << "Cat : Assignation operator called" << std::endl;
+    std::cout << "WrongCat : Assignation operator called" << std::endl;
     if (this != &other)
     {
         this->_type = other._type;
@@ -38,7 +38,7 @@ Cat &Cat::operator=(Cat const &other)
 
 // Class Methods
 
-void Cat::makeSound(void) const
+void WrongCat::makeSound(void) const
 {
-    std::cout << "This is a Cat sound" << std::endl;
+    std::cout << "This is a WrongCat sound" << std::endl;
 }
