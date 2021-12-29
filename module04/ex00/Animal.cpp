@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:22 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/28 21:09:51 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/29 13:52:21 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,9 @@ std::string Animal::getType(void) const {
 // Class Methods
 
 void Animal::makeSound(void) const {
-    std::cout << "This is a " << this->_type << " sound" << std::endl;
+    if (this->_type == "Cat") {
+        std::cout << "This is a Cat sound" << std::endl;
+    } else if (this->_type == "Dog") {
+        std::cout << "This is a Dog sound" << std::endl;
+    }
 }
