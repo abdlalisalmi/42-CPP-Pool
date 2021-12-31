@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:09 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 16:07:49 by aes-salm         ###   ########.fr       */
+/*   Updated: 2021/12/31 17:55:31 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
     public:
         Animal( void );
         Animal( std::string );
-        ~Animal();
+        virtual ~Animal();
         Animal( Animal const &);
         Animal &operator=( Animal const &);
 
