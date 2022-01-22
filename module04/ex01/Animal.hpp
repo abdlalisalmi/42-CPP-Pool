@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:09 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/31 17:55:31 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/01/22 13:13:00 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal
 {
     protected:
         std::string _type;
-        
+
     public:
         Animal( void );
         Animal( std::string );
