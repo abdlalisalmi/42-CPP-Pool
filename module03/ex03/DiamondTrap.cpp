@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 11:55:35 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/28 13:41:37 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/05 18:42:34 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 DiamondTrap::DiamondTrap(void)
 {
     std::cout << "DiamondTrap : Defualt constructor called" << std::endl;
+	this->_hitPoints = FragTrap::_hitPoints;
+    this->_energyPoints = ScavTrap::_energyPoints;
+    this->_attackDamage = FragTrap::_attackDamage;
 }
 DiamondTrap::DiamondTrap(std::string name)
 {

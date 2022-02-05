@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:50:47 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/24 23:03:38 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/05 18:39:42 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ClapTrap::ClapTrap(void)
 {
     std::cout << "ClapTrap : Defualt constructor called" << std::endl;
+	setHitPoints(10);
+    setEnergyPoints(10);
+    setAttackDamage(0);
 }
 
 ClapTrap::ClapTrap(std::string name)
