@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:22 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/07 10:58:22 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:23:27 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,6 @@ std::string Animal::getType(void) const {
 
 // Class Methods
 
-void Animal::makeSound(void) const {}
+void Animal::makeSound(void) const {
+	std::cout << "This is an Animal sound" << std::endl;
+}
