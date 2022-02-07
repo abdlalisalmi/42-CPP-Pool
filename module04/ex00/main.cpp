@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:40:27 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/31 17:59:24 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:12:30 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,15 @@ int main()
     j->makeSound();
     meta->makeSound();
     
-
-    std::cout << std::endl << "----- Test WrongCat with virtual keyword ------" << std::endl;
-    const WrongAnimal *w = new WrongCat();
-    std::cout << w->getType() << " " << std::endl;
-    w->makeSound();
-    
-    std::cout << std::endl << "----- Test WrongCat without virtual keyword ------" << std::endl;
-    WrongCat *wc = new WrongCat();
+    std::cout << std::endl << "----- Test WrongCat & WrongAnimal Classes ------" << std::endl;
+    WrongAnimal *wc = new WrongCat();
     std::cout << wc->getType() << " " << std::endl;
     wc->makeSound();
     std::cout << std::endl;
 
-    std::cout << std::endl;
     delete meta;
     delete j;
     delete i;
-    delete w;
     delete wc;
     return 0;
 }

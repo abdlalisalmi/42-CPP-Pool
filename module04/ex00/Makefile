@@ -6,12 +6,12 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 14:36:32 by aes-salm          #+#    #+#              #
-#    Updated: 2021/12/29 16:19:10 by aes-salm         ###   ########.fr        #
+#    Updated: 2022/02/07 11:16:39 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	a.out
-CC		= 	clang++
+CC		= 	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 

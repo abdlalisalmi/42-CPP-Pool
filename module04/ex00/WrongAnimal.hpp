@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:09 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 16:13:49 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:13:06 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal
     public:
         WrongAnimal( void );
         WrongAnimal( std::string );
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
         WrongAnimal( WrongAnimal const &);
         WrongAnimal &operator=( WrongAnimal const &);
 

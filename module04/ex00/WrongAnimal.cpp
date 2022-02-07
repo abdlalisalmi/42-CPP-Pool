@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:42:22 by aes-salm          #+#    #+#             */
-/*   Updated: 2021/12/29 16:13:53 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:14:05 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,6 @@ std::string WrongAnimal::getType(void) const {
 
 // Class Methods
 
-void WrongAnimal::makeSound(void) const {}
+void WrongAnimal::makeSound(void) const {
+	std::cout << "This is a WrongAnimal sound" << std::endl;
+}
