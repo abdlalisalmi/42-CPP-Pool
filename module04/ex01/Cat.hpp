@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 13:48:17 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/01/22 13:13:45 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:41:18 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 	Brain *_brain;
 
 public:
-	~Cat();
+	virtual ~Cat();
 	Cat(void);
 	Cat(Cat const &);
 	Cat &operator=(Cat const &);

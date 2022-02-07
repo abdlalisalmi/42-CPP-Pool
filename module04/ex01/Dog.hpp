@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 20:40:38 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/01/22 13:13:26 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/07 11:41:26 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 	Brain *_brain;
 
 public:
-	~Dog();
+	virtual ~Dog();
 	Dog(void);
 	Dog(Dog const &);
 	Dog &operator=(Dog const &);
