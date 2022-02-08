@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:37:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/08 20:29:50 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/08 22:05:10 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ Bureaucrat::Bureaucrat(void)
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
 	std::cout << "Bureaucrat : Constractor Called" << std::endl;
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	this->grade = grade;
 }
 
@@ -44,9 +48,10 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other)
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream &output, const Bureaucrat &obj) {
-    output << obj.getName() << " bureaucrat grade " << obj.getGrade() << ".";
-    return output;
+std::ostream &operator<<(std::ostream &output, const Bureaucrat &obj)
+{
+	output << obj.getName() << " bureaucrat grade " << obj.getGrade() << ".";
+	return output;
 }
 
 // exercice methods
@@ -63,10 +68,14 @@ int Bureaucrat::getGrade(void) const
 
 void Bureaucrat::gradeIncrement(void)
 {
+	if (grade == 1)
+		throw Bureaucrat::GradeTooHighException();
 	this->grade--;
 }
 
 void Bureaucrat::gradeDecrement(void)
 {
+	if (grade == 150)
+		throw Bureaucrat::GradeTooLowException();
 	this->grade++;
 }
