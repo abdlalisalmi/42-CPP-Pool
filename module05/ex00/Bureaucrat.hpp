@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:36:14 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/08 21:57:57 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:27:59 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	{
 		const char *what() const throw()
 		{
-			return "Grade Too High!!";
+			return "GradeTooHighException";
 		}
 	};
 
@@ -41,7 +41,7 @@ public:
 	{
 		const char *what() const throw()
 		{
-			return "Grade Too Low!!";
+			return "GradeTooLowException";
 		}
 	};
 

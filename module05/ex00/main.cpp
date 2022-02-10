@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:54:17 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/08 20:41:29 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:30:45 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,53 @@ int main()
 			  << "4) test decrement function:" << std::endl;
 	b.gradeDecrement();
 	std::cout << "Grade: " << b.getGrade() << std::endl;
+	
+	std::cout << std::endl
+			  << "5) test create object with grade=200:" << std::endl;
+	try
+	{
+		Bureaucrat obj1("aes-salm", 200);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
+	std::cout << std::endl
+			  << "6) test create object with grade=0:" << std::endl;
+	try
+	{
+		Bureaucrat obj1("aes-salm", 0);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
+	std::cout << std::endl
+			  << "7) test increment grade to 0:" << std::endl;
+	try
+	{
+		Bureaucrat obj1("aes-salm", 1);
+		obj1.gradeIncrement();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
+	std::cout << std::endl
+			  << "8) test decrement grade to 151:" << std::endl;
+	try
+	{
+		Bureaucrat obj1("aes-salm", 150);
+		obj1.gradeDecrement();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
 	std::cout << "----------------------------------" << std::endl;
-	// try
-	// {
-	// }
-	// catch (std::exception &e)
-	// {
-	// }
 	return 0;
 }
