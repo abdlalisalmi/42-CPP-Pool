@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 23:11:52 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 15:45:46 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:05:24 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ public:
 	~ShrubberyCreationForm();
 	
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &);
+
+	void createShrubberyASCIITreesFile(void) const;
 };
 
 #endif

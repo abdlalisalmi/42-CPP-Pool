@@ -6,11 +6,12 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 23:43:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/13 00:00:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:08:15 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
@@ -37,4 +38,9 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	std::cout << "= Operator Called" << std::endl;
 	this->target = other.target;
 	return *this;
+}
+
+void ShrubberyCreationForm::createShrubberyASCIITreesFile(void) const {
+	std::ofstream outFile;
+	outFile.open(this->target + "_shrubbery");
 }
