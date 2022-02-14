@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:23:51 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/11 12:56:28 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:26:56 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ Form::Form(Form const &other): name(other.name), signGrade(other.signGrade), exe
 }
 Form &Form::operator=(Form const &other) {
 	std::cout << "Form : Assignation operator called";
-	(void)other;
-	// to be continued
+	this->isSigned = other.isSigned;
 	return *this;
 }
 std::ostream &operator<<(std::ostream &output, Form const &obj) {
