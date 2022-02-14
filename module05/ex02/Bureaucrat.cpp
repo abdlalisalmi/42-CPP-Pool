@@ -6,11 +6,12 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:37:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/11 12:37:53 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:56:31 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::~Bureaucrat()
 {
@@ -87,5 +88,20 @@ void Bureaucrat::signForm(std::string formName, bool isSigned, std::string reaso
 	} else {
 		std::cout << this->getName() << " couldn't sign " << formName 
 					<< " because " << reason << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const & form) const {
+	if (form.getFormStatus()) {
+		if (this->getGrade() > form.getFormExecuteGrade()) {
+			std::cout << this->getName() << " couldn't execute " << form.getFormName()
+					<< " because " << "GradeTooLow!" << std::endl;
+			throw Form::GradeTooLowException();
+		}
+		std::cout << this->getName() << " executed " << form.getFormName() << std::endl;
+	} else {
+		std::cout << this->getName() << " couldn't execute " << form.getFormName()
+					<< " because " << "FormNotSigned!" << std::endl;
+		throw Form::FormNotSignedException();
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:22:51 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/12 23:48:12 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 16:02:13 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int main()
 {
 	std::cout << std::endl;
 	std::cout << "----------------------------------" << std::endl;
-	std::cout << "Create Invalid Form Object" << std::endl;
+	std::cout << "Test ShrubberyCreationForm Class" << std::endl;
 	std::cout << "----------------------------------" << std::endl;
 
-	ShrubberyCreationForm SCF("aes-salm");
+	ShrubberyCreationForm SCF("home");
 
 	// try
 	// {

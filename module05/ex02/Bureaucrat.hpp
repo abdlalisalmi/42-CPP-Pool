@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:36:14 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/11 12:37:46 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:39:27 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+// #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -53,6 +56,7 @@ public:
 	void gradeDecrement(void);
 
 	void signForm(std::string formName, bool isSigned, std::string reason) const;
+	void executeForm(Form const & form) const;
 };
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &obj);
