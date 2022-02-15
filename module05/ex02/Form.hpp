@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:23:45 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/15 11:13:39 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 22:02:25 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,17 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-		const char *what() const throw()
-		{
-			return "Form::GradeTooHighException";
-		}
+		const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-		const char *what() const throw()
-		{
-			return "Form::GradeTooLowException";
-		}
+		const char *what() const throw();
 	};
 	
 	class FormNotSignedException : public std::exception
 	{
-		const char *what() const throw()
-		{
-			return "Form::FormNotSignedException";
-		}
+		const char *what() const throw();
 	};
 
 	std::string getFormName(void) const;

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:37:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/11 12:37:53 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 21:56:31 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,15 @@ void Bureaucrat::signForm(std::string formName, bool isSigned, std::string reaso
 		std::cout << this->getName() << " couldn't sign " << formName 
 					<< " because " << reason << std::endl;
 	}
+}
+
+// Exceptions
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Bureaucrat::GradeTooHighException";
+}
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Bureaucrat::GradeTooLowException";
 }

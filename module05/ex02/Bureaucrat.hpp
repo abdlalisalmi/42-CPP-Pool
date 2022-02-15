@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:36:14 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 15:39:27 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 21:57:36 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,12 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-		const char *what() const throw()
-		{
-			return "Bureaucrat::GradeTooHighException";
-		}
+		const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-		const char *what() const throw()
-		{
-			return "Bureaucrat::GradeTooLowException";
-		}
+		const char *what() const throw();
 	};
 
 	std::string

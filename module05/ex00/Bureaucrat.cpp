@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:37:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/10 19:27:40 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 21:39:07 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,15 @@ void Bureaucrat::gradeDecrement(void)
 	if (grade == 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->grade++;
+}
+
+// Exceptions
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Bureaucrat::GradeTooHighException";
+}
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Bureaucrat::GradeTooLowException";
 }

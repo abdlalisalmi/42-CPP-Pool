@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:23:51 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/15 11:17:15 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 22:05:30 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,19 @@ void Form::beSigned(Bureaucrat const &b) {
 		b.signForm(this->getFormName(), false, "GradeTooLow!");
 		throw Form::GradeTooLowException();
 	}
+}
+
+// Exceptions
+
+const char * Form::GradeTooHighException::what() const throw()
+{
+	return "Form::GradeTooHighException";
+}
+const char * Form::GradeTooLowException::what() const throw()
+{
+	return "Form::GradeTooLowException";
+}
+const char * Form::FormNotSignedException::what() const throw()
+{
+	return "Form::FormNotSignedException";
 }

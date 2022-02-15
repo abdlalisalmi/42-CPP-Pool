@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:37:55 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 15:56:31 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 21:57:47 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,15 @@ void Bureaucrat::executeForm(Form const & form) const {
 					<< " because " << "FormNotSigned!" << std::endl;
 		throw Form::FormNotSignedException();
 	}
+}
+
+// Exceptions
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Bureaucrat::GradeTooHighException";
+}
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Bureaucrat::GradeTooLowException";
 }
