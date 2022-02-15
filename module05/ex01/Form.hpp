@@ -6,13 +6,13 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:23:45 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/11 12:42:04 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:34:35 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #ifndef FORM_HPP
-#define FORM_hpp
+#define FORM_HPP
 
 #include "iostream"
 #include "Bureaucrat.hpp"
