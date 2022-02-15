@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 10:40:11 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 15:44:42 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:45:01 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	~RobotomyRequestForm();
 	
 	RobotomyRequestForm &operator=(RobotomyRequestForm const &);
+	void execute(Bureaucrat const & executor) const;
 };
 
 #endif

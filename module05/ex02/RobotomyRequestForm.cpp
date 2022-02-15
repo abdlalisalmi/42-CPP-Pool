@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 10:41:34 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 10:48:40 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:51:38 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &o
 	std::cout << "= Operator Called" << std::endl;
 	this->target = other.target;
 	return *this;
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+	executor.executeForm(*this);
+	std::cout << "Zzzzzzzz " << this->target << " has been robotomized successfully 50% of the time" << std::endl;
 }

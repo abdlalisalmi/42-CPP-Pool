@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 10:51:02 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 10:51:51 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:50:27 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 	std::cout << "= Operator Called" << std::endl;
 	this->target = other.target;
 	return *this;
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+	executor.executeForm(*this);
+	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 10:50:21 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 15:44:51 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:45:12 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	~PresidentialPardonForm();
 	
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &);
+	void execute(Bureaucrat const & executor) const;
 };
 
 #endif

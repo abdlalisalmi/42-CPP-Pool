@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:23:45 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/14 15:58:41 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:13:39 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ public:
 	int getFormExecuteGrade(void) const;
 
 	void beSigned(Bureaucrat const &);
-	void execute(Bureaucrat const & executor) const;
+	virtual void execute(Bureaucrat const & executor) const = 0;
 
 };
 
