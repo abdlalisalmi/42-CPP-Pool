@@ -6,27 +6,58 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 22:52:08 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/24 23:22:34 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:02:14 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
+
+int isChar(std::string arg) {
+	if (arg.length() == 1 && !std::isdigit(arg[0])) {
+		return true;
+	}
+	return false;
+}
+
+void convertToChar(char *arg) {
+	std::cout << "char: ";
+	if (isChar(arg)) {
+		std::cout << arg << std::endl;
+	}
+	
+}
+
+void convertToInt(char *arg) {
+	std::cout << "int: ";
+	if (isChar(arg)) {
+		std::cout << static_cast <int> (arg[0]) << std::endl;
+	}
+}
+
+void convertToFloat(char *arg) {
+	std::cout << "float: ";
+	if (isChar(arg)) {
+		std::cout << static_cast <float> (arg[0]) << ".0f" << std::endl;
+	}
+}
+
+void convertToDouble(char *arg) {
+	std::cout << "double: ";
+	if (isChar(arg)) {
+		std::cout << static_cast <double> (arg[0]) << ".0" << std::endl;
+	}
+}
 
 int main(int len, char **args) {
 
 	if (len != 2) {
 		std::cout << "Invalid Arguments !!" << std::endl;
 		return 1;
+	} else {
+		convertToChar(args[1]);
+		convertToInt(args[1]);
+		convertToFloat(args[1]);
+		convertToDouble(args[1]);
 	}
-
-	std::string arg = args[1];
-	
-	if (arg.length() == 1 && isalpha(arg[0])){
-		std::cout << "Char: " << arg << std::endl;
-		std::cout << "Int: " << (int)arg[0] << std::endl;
-		std::cout << "float: " << (float)arg[0] << std::endl;
-		std::cout << "double: " << (double)arg[0] << std::endl;
-	}
-
 	return 0;
 }
