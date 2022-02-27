@@ -6,17 +6,28 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 16:20:31 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/27 16:22:55 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/27 18:24:29 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
+
+
 
 int isChar(std::string arg) {
 	if (arg.length() == 1 && !std::isdigit(arg[0])) {
 		return true;
 	}
 	return false;
+}
+
+int isInt(std::string arg) {
+	for (size_t i = 0; i < arg.length(); i++)
+	{
+		if (arg[0] == '-' || arg[0] == '+') continue;
+		if (!std::isdigit(arg[i])) return false;
+	}
+	return true;
 }
 
 void convertToChar(char *arg) {
@@ -29,7 +40,15 @@ void convertToChar(char *arg) {
 
 void convertToInt(char *arg) {
 	std::cout << "int: ";
-	if (isChar(arg)) {
+	if (isInt(arg)) {
+		int toInt = std::atoi(arg);
+		// Check for MAX_INT and MIN_INT
+		if (toInt == -1 && std::strcmp(arg, "-1")) {
+			std::cout << "impossible" << std::endl;
+		} else {
+			std::cout << arg << std::endl;
+		}
+	} else if (isChar(arg)) {
 		std::cout << static_cast <int> (arg[0]) << std::endl;
 	}
 }
