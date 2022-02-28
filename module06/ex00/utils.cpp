@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 16:20:31 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/28 15:09:20 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/28 22:17:30 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool isFloat(std::string arg) {
 }
 
 bool isDouble(std::string arg) {
-	if (arg.length() > 1 && arg[arg.length() - 1] != 'f' && arg.find('.') != std::string::npos) {
+	if (arg.length() > 1 && std::isdigit(arg[arg.length() - 1]) && arg.find('.') != std::string::npos) {
 		arg.erase(arg.length() - 1);
 		std::istringstream iss(arg);
 		float dummy;
@@ -50,6 +50,29 @@ bool isDouble(std::string arg) {
 		return iss && iss.eof();
 	}
 	return false;
+}
+
+bool isPseudoLiterals(std::string arg) {
+	std::string pseudoLiterals[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
+	for(size_t i = 0; i < 6; i++) {
+		if (!std::strcmp(arg.c_str(), pseudoLiterals[i].c_str())) return true;
+	}
+	return false;
+}
+
+void convertPseudoLiterals(std::string arg) {
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	if (!std::strcmp(arg.c_str(), "nan") || !std::strcmp(arg.c_str(), "nanf")) {
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	} else if (!std::strcmp(arg.c_str(), "-inff") || !std::strcmp(arg.c_str(), "-inf")) {
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	} else if (!std::strcmp(arg.c_str(), "+inff") || !std::strcmp(arg.c_str(), "+inf")) {
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+	}
 }
 
 void convertToChar(char *arg) {
@@ -64,7 +87,7 @@ void convertToChar(char *arg) {
 			std::cout << "impossible" << std::endl;
 		} else {
 			if (toInt >= 0 && toInt <= 31) std::cout << "Non displayable" << std::endl;
-			else std::cout << static_cast <char> (toInt) << std::endl;
+			else std::cout << "'" << static_cast <char> (toInt) << "'" << std::endl;
 		}
 	} else if (isFloat(arg)) {
 		std::string floatStr(arg);
@@ -75,7 +98,7 @@ void convertToChar(char *arg) {
 			std::cout << "impossible" << std::endl;
 		} else {
 			if (toInt >= 0 && toInt <= 31) std::cout << "Non displayable" << std::endl;
-			else std::cout << static_cast <char> (toInt) << std::endl;
+			else std::cout << "'" << static_cast <char> (toInt) << "'" << std::endl;
 		}
 	} else if (isDouble(arg)) {
 		std::string doubleStr(arg);
@@ -86,7 +109,7 @@ void convertToChar(char *arg) {
 			std::cout << "impossible" << std::endl;
 		} else {
 			if (toInt >= 0 && toInt <= 31) std::cout << "Non displayable" << std::endl;
-			else std::cout << static_cast <char> (toInt) << std::endl;
+			else std::cout << "'" << static_cast <char> (toInt) << "'" << std::endl;
 		}
 	} else {
 		std::cout << "impossible" << std::endl;
@@ -133,7 +156,7 @@ void convertToInt(char *arg) {
 void convertToFloat(char *arg) {
 	std::cout << "float: ";
 	if (isFloat(arg)) {
-		std::cout << static_cast <float> (std::atof(arg)) << "f" << std::endl;
+		std::cout << arg << std::endl;
 	} else if (isChar(arg)) {
 		std::cout << static_cast <float> (arg[0]) << ".0f" << std::endl;
 	} else if (isInt(arg)) {
@@ -149,7 +172,12 @@ void convertToFloat(char *arg) {
 		if (toFloat == -1 && std::strcmp(arg, "-1")) {
 			std::cout << "impossible" << std::endl;
 		} else {
-			std::cout << static_cast <float> (toFloat) << "f" << std::endl;
+			std::cout << static_cast <float> (toFloat);
+			if (floatStr[floatStr.length()-1] == '0') {
+				if (floatStr[floatStr.length()-2] == '.') std::cout << ".0f";
+				else std::cout << "0f";
+			}
+			std::cout << std::endl;
 		}
 	} else {
 		std::cout << "impossible" << std::endl;
@@ -159,8 +187,7 @@ void convertToFloat(char *arg) {
 void convertToDouble(char *arg) {
 	std::cout << "double: ";
 	if (isDouble(arg)) {
-		std::string doubleStr(arg);
-		std::cout << static_cast <double> (std::atof(doubleStr.c_str())) << std::endl;
+		std::cout << arg << std::endl;
 	} else if (isChar(arg)) {
 		std::cout << static_cast <double> (arg[0]) << ".0" << std::endl;
 	} else if (isInt(arg)) {
@@ -173,7 +200,12 @@ void convertToDouble(char *arg) {
 	} else if (isFloat(arg)) {
 		std::string floatStr(arg);
 		floatStr = floatStr.substr(0, floatStr.length() - 1);
-		std::cout << static_cast <double> (std::atof(floatStr.c_str())) << std::endl;
+		std::cout << static_cast <double> (std::atof(floatStr.c_str()));
+		if (floatStr[floatStr.length()-1] == '0') {
+			if (floatStr[floatStr.length()-2] == '.') std::cout << ".0";
+			else std::cout << "0";
+		}
+		std::cout << std::endl;
 	} else {
 		std::cout << "impossible" << std::endl;
 	}
