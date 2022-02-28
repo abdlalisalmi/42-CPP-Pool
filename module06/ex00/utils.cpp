@@ -6,20 +6,20 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 16:20:31 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/28 15:08:11 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:09:20 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
 
-int isChar(std::string arg) {
+bool isChar(std::string arg) {
 	if (arg.length() == 1 && !std::isdigit(arg[0])) {
 		return true;
 	}
 	return false;
 }
 
-int isInt(std::string arg) {
+bool isInt(std::string arg) {
 	size_t i = 0; 
 	if (arg[0] == '-' || arg[0] == '+') i++;
 	while (i < arg.length())
