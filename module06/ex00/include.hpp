@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 22:55:24 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/28 10:26:21 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:54:58 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <string>
 #include <ctype.h>
+#include <sstream>
+#include <climits>
 
 void convertToChar(char *arg);
 void convertToInt(char *arg);
