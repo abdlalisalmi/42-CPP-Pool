@@ -6,14 +6,14 @@
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 22:41:40 by aes-salm          #+#    #+#              #
-#    Updated: 2022/03/04 14:13:19 by aes-salm         ###   ########.fr        #
+#    Updated: 2022/03/04 20:12:46 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= convert
+NAME 	= a.out
 CC		= clang++
 FLAGS 	= -Wall -Wextra -Werror -std=c++98
-SRCS 	= main.cpp utils.cpp
+SRCS 	= main.cpp Data.cpp
 
 $(NAME)	: 	$(SRCS)
 			$(CC) $(FLAGS) $(SRCS) -o $(NAME)
