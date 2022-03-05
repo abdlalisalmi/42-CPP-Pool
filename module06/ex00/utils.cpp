@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 16:20:31 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/28 15:09:20 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/03/05 16:29:54 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ bool isDouble(std::string arg) {
 }
 
 void convertToChar(char *arg) {
+
+	
 
 	std::cout << "char: ";
 	if (isChar(arg)) {
