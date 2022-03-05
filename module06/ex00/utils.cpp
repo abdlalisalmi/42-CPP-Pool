@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 16:20:31 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/02/28 22:17:30 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/03/05 22:28:38 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void convertPseudoLiterals(std::string arg) {
 }
 
 void convertToChar(char *arg) {
+
+	
 
 	std::cout << "char: ";
 	if (isChar(arg)) {

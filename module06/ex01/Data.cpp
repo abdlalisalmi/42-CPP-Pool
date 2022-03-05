@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 12:38:53 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/03/05 11:07:29 by aes-salm         ###   ########.fr       */
+/*   Created: 2022/03/04 11:20:12 by aes-salm          #+#    #+#             */
+/*   Updated: 2022/03/05 12:04:13 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "Data.hpp"
 
-int main(void)
-{
-    Fixed a;
-    Fixed b(a);
-    // Fixed c;
-    // c = b;
-    // std::cout << a.getRawBits() << std::endl;
-    // std::cout << b.getRawBits() << std::endl;
-    // std::cout << c.getRawBits() << std::endl;
-    return 0;
+Data::Data(int number, std::string str) {
+	this->number = number;
+	this->str = str;
+}
+Data::~Data(){}
+
+int Data::getNumber(void) const {
+	return this->number;
+}
+
+std::string Data::getStr(void) const {
+	return this->str;
 }

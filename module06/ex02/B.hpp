@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 12:38:53 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/03/05 11:07:29 by aes-salm         ###   ########.fr       */
+/*   Created: 2022/03/05 12:14:12 by aes-salm          #+#    #+#             */
+/*   Updated: 2022/03/05 12:14:14 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#pragma once
+#ifndef B_HPP
+#define B_HPP
 
-int main(void)
+#include <iostream>
+#include "Base.hpp"
+
+class B : public Base
 {
-    Fixed a;
-    Fixed b(a);
-    // Fixed c;
-    // c = b;
-    // std::cout << a.getRawBits() << std::endl;
-    // std::cout << b.getRawBits() << std::endl;
-    // std::cout << c.getRawBits() << std::endl;
-    return 0;
-}
+	private:
+		/* data */
+	public:
+};
+
+#endif

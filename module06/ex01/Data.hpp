@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 12:38:53 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/03/05 11:07:29 by aes-salm         ###   ########.fr       */
+/*   Created: 2022/03/04 11:16:59 by aes-salm          #+#    #+#             */
+/*   Updated: 2022/03/05 12:04:11 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
+#ifndef DATA_HPP
+#define DATA_HPP
+
 #include <iostream>
 
-int main(void)
+class Data
 {
-    Fixed a;
-    Fixed b(a);
-    // Fixed c;
-    // c = b;
-    // std::cout << a.getRawBits() << std::endl;
-    // std::cout << b.getRawBits() << std::endl;
-    // std::cout << c.getRawBits() << std::endl;
-    return 0;
-}
+	private:
+		int number;
+		std::string str;
+
+	public:
+		Data(int, std::string);
+		~Data();
+
+		std::string getStr(void) const;
+		int getNumber(void) const;
+};
+
+#endif

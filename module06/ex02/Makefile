@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/24 22:41:40 by aes-salm          #+#    #+#              #
-#    Updated: 2022/03/04 14:13:19 by aes-salm         ###   ########.fr        #
+#    Created: 2022/03/05 12:07:50 by aes-salm          #+#    #+#              #
+#    Updated: 2022/03/05 12:23:32 by aes-salm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= convert
+NAME 	= a.out
 CC		= clang++
 FLAGS 	= -Wall -Wextra -Werror -std=c++98
-SRCS 	= main.cpp utils.cpp
+SRCS 	= main.cpp Base.cpp A.cpp B.cpp C.cpp functions.cpp
 
 $(NAME)	: 	$(SRCS)
 			$(CC) $(FLAGS) $(SRCS) -o $(NAME)
