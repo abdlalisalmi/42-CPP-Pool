@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 21:21:28 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/03/07 19:34:04 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/03/07 23:56:38 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ int main() {
 	std::cout << "STRING Array size = " << emptyStrArray.size() << std::endl;
 
 	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
+	
+	std::cout << "Create a STRING Array with size=5:" << std::endl;
+	Array <std::string> strArray(2);
+	strArray[0] = "Hello";
+	strArray[1] = "World";
+	std::cout << "size = " << strArray.size() << std::endl;
+	strArray.print();
+
+	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
 
 	std::cout << "Create an INT Array with size=5:" << std::endl;
 	Array <int> intArray(5);
@@ -34,33 +43,33 @@ int main() {
 	std::cout << "size = " << intArray.size() << std::endl;
 	intArray.print();
 
-	std::cout << "[+] Test Array Copy Constructor:";
+	std::cout << "[+] Test read with [] operator: " << std::endl;
+	std::cout << "intArray[0] = " << intArray[0] << std::endl;
+	std::cout << "[+] Test Array Copy Constructor:" << std::endl;
 	Array <int> copyIntArray(intArray);
 	std::cout << "size = " << copyIntArray.size() << std::endl;
 	copyIntArray.print();
-	
 
-	std::cout << std::endl << "---------------------------------" << std::endl << std::endl;
-	
-	std::cout << "Create an STRING Array with size=5:" << std::endl;
-	Array <std::string> strArray(5);
-	std::cout << "size = " << strArray.size() << std::endl;
-	// Array <int> array1(5);
-	// try
-	// {
-	// 	array1[10];
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << '\n';
-	// }
-	
-	// Array <int> array2;
-	// std::cout << array1.size() << std::endl;
-	// std::cout << array2.size() << std::endl;
+	std::cout << "[+] Test Deep Copy:" << std::endl;
+	intArray[0] = 1996;
+	std::cout << "Original Array "; intArray.print();
+	std::cout << "Copy Array "; copyIntArray.print();
 
-	// array2 = array1;
-	// std::cout << array2.size() << std::endl;
+	std::cout << "[+] Test Access to invalid index 10:" << std::endl;
+	try
+	{
+		intArray[10];
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	// std::cout << "[+] Test Const Array:" << std::endl;
+	// const Array<int> constIntArray(3);
+	// constIntArray.print();
+	// std::cout << constIntArray[0] << std::endl;
+	// constIntArray[0] = 10;
 
 	return 0;
 }
