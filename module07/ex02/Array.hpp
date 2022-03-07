@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 21:14:33 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/03/06 21:49:28 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/03/07 19:44:00 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,54 @@ template <typename T>
 class Array
 {
 	private:
-		int _size;
+		unsigned int _size;
 		T * _array;
 		
 	public:
-		Array(void) {
-			this->_array = new T;
-		}
+		Array(void): _size(0), _array(NULL) {}
+
 		Array(unsigned int n): _size(n) {
-            this->_array = new T[n];
+            _array = new T[_size];
         }
 
-		T getArray(void) const {
-			return this->_array;
+		Array(T const &other) {
+			*this = other;
+        }
+
+		Array<T>& operator= (const Array<T>& other) {
+			if (this != other) {
+				if (this->_array) delete [] this->_array;
+				this->_size = other.size();
+				this->_array = new T[this->_size];
+				for (unsigned int i = 0; i < this->_size; i++)
+					this->_array[i] = other._array[i];
+			}
+			return *this;
 		}
 
-		int size(void) const {
-			return this->_size;
+		Array<T>& operator[](unsigned int index) {
+			if (index >= this->size()) {
+				throw std::out_of_range ("The Index is greater than the Array size.");
+			}
+			return this->_array[index];
 		}
+		
+		unsigned int size(void) const {
+			return _size;
+		}
+
+		void print(void) const {
+			std::cout << "Content: ";
+			for (unsigned int i = 0; i < _size; i++)
+				std::cout << _array[i] << " ";
+			std::cout << std::endl;
+		}
+
 };
+
 template <typename T>
-std::ostream & operator<<( std::ostream & o, Array<T> const & obj) {
-	o << obj.getArray();
+std::ostream & operator<<( std::ostream & o, Array <T> const & obj) {
+	o << &obj;
 	return o;
 }
 
