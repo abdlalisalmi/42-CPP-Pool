@@ -6,7 +6,7 @@
 /*   By: aes-salm <aes-salm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 21:14:33 by aes-salm          #+#    #+#             */
-/*   Updated: 2022/03/07 23:52:09 by aes-salm         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:14:24 by aes-salm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class Array
 		
 	public:
 		~Array<T>() {
-			if (_array) delete [] _array;
-			_array = NULL;
+			if (_array) delete[] _array;
+			_array = nullptr;
         }
 
-		Array<T>(void): _size(0), _array(NULL) {}
+		Array<T>(void): _size(0), _array(nullptr) {}
 
 		Array<T>(unsigned int n): _size(n) {
 			if (_size <= 0) throw std::invalid_argument("Invalid Array size.");
@@ -41,14 +41,13 @@ class Array
         }
 
 		Array<T>& operator= (const Array<T>& other) {
-			(void)other;
 			if (this->size() == other.size()) {
 				for (unsigned int i = 0; i < this->size(); i++)
 					this->_array[i] = other._array[i];
 			} else {
-				if (this->size()) {
-					delete [] this->_array;
-				}
+				// if (this->_array != nullptr) {
+				// 	delete[] this->_array;
+				// }
 				this->_size = other.size();
 				this->_array = new T[this->_size];
 				for (unsigned int i = 0; i < this->_size; i++)
